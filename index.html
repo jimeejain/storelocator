@@ -3,8 +3,8 @@
 <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./w3css.css" /> 
-    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="./w3css.css" />
+    <link rel="stylesheet" href="./app.css" />
 </head>
 <body ng-app="ccdApp" ng-controller="mainController">
     <div class="headMenu">
@@ -27,14 +27,14 @@
                     <div class="w3-container cardContent">
                         <h5 class="w3-center" style="color: #e62026">{{store.name}}</h5>
                         <div style="color: #666;">{{store.address1}},{{store.city_area}},{{store.city}}</div>
-                        
+
                         <div style="color: #666; font-style: italic">
                             {{store.state}}-{{store.pincode}}
 
                         </div>
                         <div class="iconBar">
                             <!--<span class="wifi" ng-show="store.wifi==0">
-                                
+
                             </span>-->
                             <img class="wifi" src="./images/8465163-1.png" ng-show="store.wifi==0" />
                             <span ng-class="{'veg':store.veg==1,'nonveg':store.veg==0}"></span>
@@ -61,7 +61,7 @@
                    <li>The information provided in this app may not be accurate. Hereby, i shall not be responsible for any sort of misguidance. </li>
                    <li>please visit the original/official website of <a href="https://www.cafecoffeeday.com/shop-locator" target="_blank">CCD</a></li>
                </ul>
-                
+
             </div>
             <footer class="w3-container w3-teal btnForSite">
                 <a class="w3-btn" href="http://jimee.in" target="_blank">Visit jimee.in</a>
@@ -69,8 +69,8 @@
         </div>
     </div>
 
-<script src="/angualr.js"></script>
-<script src="/app.js"></script>
+<script src="./angualr.js"></script>
+<script src="./app.js"></script>
 </body>
 </html>
 :
