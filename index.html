@@ -1,1 +1,76 @@
-This is a placeholder for main store locator. edited
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./w3css.css" /> 
+    <link rel="stylesheet" href="/app.css" />
+</head>
+<body ng-app="ccdApp" ng-controller="mainController">
+    <div class="headMenu">
+        <a href="#"><img src="./images/ccd-logo-big.png" class="ccdIcon" /></a>
+        <ul class="w3-navbar w3-border">
+            <li><a class="About liColor" href="#" ng-click="aboutClicked=true">About</a></li>
+            <li><a href="#" class="liColor">Store Locator</a></li>
+        </ul>
+    </div>
+    <div class="inputContainer">
+        <input class="w3-input search" type="text" ng-model="query" placeholder="&#128269; location,place,pin-code..">
+        <!--<span class="search" style="font-size:1.5rem;">&#128269;</span>-->
+    </div>
+    <div class="container" style="width:80%;margin:auto">
+
+        <div class="w3-row">
+            <div class="w3-col s12 m4 w3-padding cardcontainer" ng-repeat="store in stores|myfilter:query">
+                <div class="w3-card-12 cardFloat">
+                    <img src="/images/store_img.png" alt="Norway" style="width:100%">
+                    <div class="w3-container cardContent">
+                        <h5 class="w3-center" style="color: #e62026">{{store.name}}</h5>
+                        <div style="color: #666;">{{store.address1}},{{store.city_area}},{{store.city}}</div>
+                        
+                        <div style="color: #666; font-style: italic">
+                            {{store.state}}-{{store.pincode}}
+
+                        </div>
+                        <div class="iconBar">
+                            <!--<span class="wifi" ng-show="store.wifi==0">
+                                
+                            </span>-->
+                            <img class="wifi" src="./images/8465163-1.png" ng-show="store.wifi==0" />
+                            <span ng-class="{'veg':store.veg==1,'nonveg':store.veg==0}"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- html for modal -->
+
+    <div id="id01" class="w3-modal" ng-show="aboutClicked">
+        <div class="w3-modal-content w3-card-8">
+            <header class="w3-container w3-teal">
+                <span ng-click="aboutClicked=false"
+                      class="w3-closebtn">&times;</span>
+                <h2>About the App</h2>
+            </header>
+            <div class="w3-container">
+               <ul>
+                   <li>This app is intended for demonstartion of my skills.</li>
+                   <li>This is nowhere related or affiliated to the Cafe Coffee Day brand.</li>
+                   <li>The information provided in this app may not be accurate. Hereby, i shall not be responsible for any sort of misguidance. </li>
+                   <li>please visit the original/official website of <a href="https://www.cafecoffeeday.com/shop-locator" target="_blank">CCD</a></li>
+               </ul>
+                
+            </div>
+            <footer class="w3-container w3-teal btnForSite">
+                <a class="w3-btn" href="http://jimee.in" target="_blank">Visit jimee.in</a>
+            </footer>
+        </div>
+    </div>
+
+<script src="/angualr.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
+:
