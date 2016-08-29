@@ -41,6 +41,8 @@
     myservice.getData().then(function (response) {
         $scope.stores = response.data.stores;
         console.log(response.data);
+        //Hide the pre-loaders
+        document.getElementById("preloader").style.display = 'none';
     }, function (error) {
         console.log(error);
     })

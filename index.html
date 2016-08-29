@@ -3,10 +3,59 @@
 <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./w3css.css" />
-    <link rel="stylesheet" href="./app.css" />
+    <style>
+    	*{
+    		padding: 0px;
+    		margin:0px;
+    		border: 0px;
+    	}
+    	body{
+    		overflow-x: none;
+    		overflow-y: scroll;
+    	}
+    	#preloader{
+    		position: fixed;
+    		top:0px;
+    		left: 0px;
+    		right: 0px;
+    		bottom:0px;
+    		z-index: 999999;
+    		background-color: #FFF;
+    	}
+    	.loader,.loader-text{
+    		position: absolute;
+    		top:calc(50vh - 125px);
+    		left:calc(50% - 125px);
+    		height: 250px;
+    		width:250px;    		
+    	}
+    	.loader{    		
+    		background-color:transparent;
+    		border:10px solid #999;
+    		border-top-color:blue;
+    		border-radius:50%;
+    		animation: spin 2s linear infinite;
+    	}
+    	.loader-text{
+    		line-height: 250px;
+    		text-align: center;
+    	}
+
+    	@keyframes spin {
+		    0% { transform: rotate(0deg) ; }
+		    100% { transform: rotate(360deg) ; }
+		}
+    </style>
 </head>
 <body ng-app="ccdApp" ng-controller="mainController">
+	<div id="preloader" >
+		<div class="loader"></div>
+		<h3 class="loader-text">Loading</h3>
+	</div>
+	<!-- Load the styles for the page and other part  -->
+    <link rel="stylesheet" href="./w3css.css" />
+    <link rel="stylesheet" href="./app.css" />
+
     <div class="headMenu">
         <a href="#"><img src="./images/ccd-logo-big.png" class="ccdIcon" /></a>
         <ul class="w3-navbar w3-border">
